@@ -15,7 +15,7 @@ describe('throttledGetDataFromApi', () => {
 
     mockedAxios.create.mockReturnValue({
       get: mockGet,
-    } as any);
+    } as unknown as ReturnType<typeof axios.create>);
 
     await throttledGetDataFromApi('/posts');
 
@@ -30,7 +30,7 @@ describe('throttledGetDataFromApi', () => {
 
     mockedAxios.create.mockReturnValue({
       get: mockGet,
-    } as any);
+    } as unknown as ReturnType<typeof axios.create>);
 
     await throttledGetDataFromApi('/posts/1');
 
@@ -47,7 +47,7 @@ describe('throttledGetDataFromApi', () => {
 
     mockedAxios.create.mockReturnValue({
       get: mockGet,
-    } as any);
+    } as unknown as ReturnType<typeof axios.create>);
 
     const result = await throttledGetDataFromApi('/posts/1');
 
